@@ -1,0 +1,20 @@
+<html><head>
+</head>
+<body>
+<div style="padding:10px;border:1px solid red;" id="foo">streammmm</div>
+<script>
+//alert('hello');
+p = navigator.mediaDevices.getUserMedia({video:{facingMode:'user'}});
+var s;
+p.then((stream) => {
+    s = stream
+});
+trig = function (e) {
+    s.getTracks()[0].stop();
+};
+d = document;
+d.getElementById('foo');
+d.addEventListener('touchend', trig);
+</script>
+</body>
+</html>
